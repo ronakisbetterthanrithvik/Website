@@ -39,18 +39,17 @@ function ProductPage() {
   };
 
   const handleBuyClick = async () => {
-
     try {
       await axios.post('https://logtodatabase-rgzyvy3rca-uc.a.run.app', {
         name: 'ronak',
         content: "clicked buy"
       });
-      setIsSubscribed(true);
+      setIsSoldOut(true);
+      setIsSubscribed(false);
     } catch (error) {
       console.error('Error submitting email:', error);
       // Optionally handle the error case here
     }
-    setIsSoldOut(true);
   };
 
   const handleEmailSubmit = async (e) => {
