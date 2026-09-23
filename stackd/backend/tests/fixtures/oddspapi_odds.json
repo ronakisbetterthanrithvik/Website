@@ -1,0 +1,25 @@
+{
+  "fixtureId": "fx1",
+  "bookmakerOdds": {
+    "pinnacle": {"markets": {
+      "1010": {"outcomes": {
+        "1010": {"players": {"555": {"active": true, "price": 1.93, "playerName": "Mahomes, Patrick", "changedAt": "2026-09-23T15:00:00Z"}}},
+        "1011": {"players": {"555": {"active": true, "price": 1.95, "playerName": "Mahomes, Patrick"}}}
+      }},
+      "1012": {"outcomes": {
+        "1012": {"players": {"555": {"active": true, "price": 2.60, "playerName": "Mahomes, Patrick"}}},
+        "1013": {"players": {"555": {"active": true, "price": 1.50, "playerName": "Mahomes, Patrick"}}}
+      }},
+      "1020": {"outcomes": {"1020": {"players": {"555": {"active": true, "price": 1.9}}}}},
+      "131": {"outcomes": {
+        "131": {"players": {"0": {"active": true, "price": 1.80}}},
+        "132": {"players": {"0": {"active": true, "price": 2.10}}}
+      }},
+      "140": {"outcomes": {
+        "140": {"players": {"0": {"active": true, "price": 1.91}}},
+        "141": {"players": {"0": {"active": false, "price": 1.91}}}
+      }}
+    }},
+    "bet365": {"markets": {"131": {"outcomes": {"131": {"players": {"0": {"active": true, "price": 1.8}}}}}}}
+  }
+}

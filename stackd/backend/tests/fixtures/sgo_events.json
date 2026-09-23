@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "data": [
+    {
+      "eventID": "evt_KC_BUF",
+      "leagueID": "NFL",
+      "teams": {
+        "home": {"teamID": "BUFFALO_BILLS_NFL", "names": {"long": "Buffalo Bills"}},
+        "away": {"teamID": "KANSAS_CITY_CHIEFS_NFL", "names": {"long": "Kansas City Chiefs"}}
+      },
+      "status": {"startsAt": "2026-09-27T20:25:00.000Z", "started": false, "completed": false},
+      "players": {
+        "PATRICK_MAHOMES_1_NFL": {"name": "Patrick Mahomes", "teamID": "KANSAS_CITY_CHIEFS_NFL"},
+        "JAMES_COOK_1_NFL": {"firstName": "James", "lastName": "Cook", "teamID": "BUFFALO_BILLS_NFL"},
+        "DJ_MOORE_1_NFL": {"name": "D.J. Moore", "teamID": "BUFFALO_BILLS_NFL"}
+      },
+      "odds": {
+        "passing_yards-PATRICK_MAHOMES_1_NFL-game-ou-over": {
+          "oddID": "passing_yards-PATRICK_MAHOMES_1_NFL-game-ou-over",
+          "statID": "passing_yards", "statEntityID": "PATRICK_MAHOMES_1_NFL", "playerID": "PATRICK_MAHOMES_1_NFL",
+          "periodID": "game", "betTypeID": "ou", "sideID": "over",
+          "byBookmaker": {
+            "draftkings": {"odds": "-115", "overUnder": "262.5", "available": true, "lastUpdatedAt": "2026-09-23T15:00:00Z"},
+            "fanduel": {"odds": "-110", "overUnder": "259.5", "available": true},
+            "pinnacle": {"odds": "-108", "overUnder": "260.5", "available": true},
+            "bovada": {"odds": "-120", "overUnder": "261.5", "available": true},
+            "betmgm": {"odds": "-110", "overUnder": "260.5", "available": false}
+          }
+        },
+        "passing_yards-PATRICK_MAHOMES_1_NFL-game-ou-under": {
+          "oddID": "passing_yards-PATRICK_MAHOMES_1_NFL-game-ou-under",
+          "statID": "passing_yards", "statEntityID": "PATRICK_MAHOMES_1_NFL", "playerID": "PATRICK_MAHOMES_1_NFL",
+          "periodID": "game", "betTypeID": "ou", "sideID": "under",
+          "byBookmaker": {
+            "draftkings": {"odds": "-105", "overUnder": "262.5", "available": true},
+            "fanduel": {"odds": "-110", "overUnder": "259.5", "available": true}
+          }
+        },
+        "rushing_yards-JAMES_COOK_1_NFL-game-ou-over": {
+          "statID": "rushing_yards", "statEntityID": "JAMES_COOK_1_NFL", "playerID": "JAMES_COOK_1_NFL",
+          "periodID": "game", "betTypeID": "ou", "sideID": "over",
+          "byBookmaker": {"caesars": {"odds": "+100", "overUnder": "68.5", "available": true}}
+        },
+        "receiving_receptions-DJ_MOORE_1_NFL-1h-ou-over": {
+          "statID": "receiving_receptions", "statEntityID": "DJ_MOORE_1_NFL", "playerID": "DJ_MOORE_1_NFL",
+          "periodID": "1h", "betTypeID": "ou", "sideID": "over",
+          "byBookmaker": {"draftkings": {"odds": "-130", "overUnder": "2.5", "available": true}}
+        },
+        "receiving_receptions-DJ_MOORE_1_NFL-game-ou-over": {
+          "statID": "receiving_receptions", "statEntityID": "DJ_MOORE_1_NFL", "playerID": "DJ_MOORE_1_NFL",
+          "periodID": "game", "betTypeID": "ou", "sideID": "over",
+          "byBookmaker": {"draftkings": {"odds": "-125", "overUnder": "4.5", "available": true}}
+        },
+        "touchdowns-JAMES_COOK_1_NFL-game-yn-yes": {
+          "statID": "touchdowns", "statEntityID": "JAMES_COOK_1_NFL", "playerID": "JAMES_COOK_1_NFL",
+          "periodID": "game", "betTypeID": "yn", "sideID": "yes",
+          "byBookmaker": {"fanduel": {"odds": "+105", "available": true}}
+        },
+        "points-home-game-sp-home": {
+          "statID": "points", "statEntityID": "home", "periodID": "game", "betTypeID": "sp", "sideID": "home",
+          "byBookmaker": {"draftkings": {"odds": "-110", "spread": "-2.5", "available": true}}
+        },
+        "points-all-game-ou-over": {
+          "statID": "points", "statEntityID": "all", "periodID": "game", "betTypeID": "ou", "sideID": "over",
+          "byBookmaker": {"draftkings": {"odds": "-110", "overUnder": "48.5", "available": true}}
+        },
+        "points-away-game-ml-away": {
+          "statID": "points", "statEntityID": "away", "periodID": "game", "betTypeID": "ml", "sideID": "away",
+          "byBookmaker": {"betmgm": {"odds": "+120", "available": true}}
+        }
+      }
+    },
+    {
+      "eventID": "evt_DAL_NYG",
+      "leagueID": "NFL",
+      "teams": {
+        "home": {"teamID": "NEW_YORK_GIANTS_NFL", "names": {"long": "New York Giants"}},
+        "away": {"teamID": "DALLAS_COWBOYS_NFL", "names": {"long": "Dallas Cowboys"}}
+      },
+      "status": {"startsAt": "2026-09-28T00:20:00.000Z"},
+      "players": {},
+      "odds": {}
+    }
+  ]
+}

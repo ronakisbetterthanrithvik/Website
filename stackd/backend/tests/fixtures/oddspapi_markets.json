@@ -1,0 +1,12 @@
+[
+  {"marketId": 1010, "marketName": "Player Passing Yards", "handicap": 260.5,
+   "outcomes": [{"outcomeId": 1010, "outcomeName": "Over"}, {"outcomeId": 1011, "outcomeName": "Under"}]},
+  {"marketId": 1012, "marketName": "Player Passing Yards", "handicap": 275.5,
+   "outcomes": [{"outcomeId": 1012, "outcomeName": "Over"}, {"outcomeId": 1013, "outcomeName": "Under"}]},
+  {"marketId": 1020, "marketName": "Player Passing Yards 1st Half", "handicap": 130.5,
+   "outcomes": [{"outcomeId": 1020, "outcomeName": "Over"}, {"outcomeId": 1021, "outcomeName": "Under"}]},
+  {"marketId": 131, "marketName": "Moneyline", "handicap": 0,
+   "outcomes": [{"outcomeId": 131, "outcomeName": "1"}, {"outcomeId": 132, "outcomeName": "2"}]},
+  {"marketId": 140, "marketName": "Spread", "handicap": -2.5,
+   "outcomes": [{"outcomeId": 140, "outcomeName": "1"}, {"outcomeId": 141, "outcomeName": "2"}]}
+]
