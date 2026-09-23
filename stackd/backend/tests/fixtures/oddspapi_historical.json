@@ -1,13 +1,36 @@
 {
   "bookmakers": {
-    "pinnacle": {"markets": {
-      "1010": {"outcomes": {
-        "1010": {"players": {"555": [
-          {"createdAt": "2026-09-25T12:00:00Z", "price": 1.90, "playerName": "Mahomes, Patrick"},
-          {"createdAt": "2026-09-27T20:20:00Z", "price": 1.80},
-          {"createdAt": "2026-09-27T21:00:00Z", "price": 3.50}
-        ]}}
-      }}
-    }}
+    "pinnacle": {
+      "markets": {
+        "1010": {
+          "outcomes": {
+            "1010": {
+              "players": {
+                "555": [
+                  {
+                    "createdAt": "2026-09-25T12:00:00Z",
+                    "price": 1.9,
+                    "playerName": "Mahomes, Patrick"
+                  },
+                  {
+                    "createdAt": "2026-09-27T20:20:00Z",
+                    "price": 1.8
+                  },
+                  {
+                    "createdAt": "2026-09-27T20:24:00Z",
+                    "price": 1.01,
+                    "active": false
+                  },
+                  {
+                    "createdAt": "2026-09-27T21:00:00Z",
+                    "price": 3.5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

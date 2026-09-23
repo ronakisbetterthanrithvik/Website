@@ -38,6 +38,7 @@ ROW_SCHEMA = {
     "player_name": pl.Utf8, "provider_player_id": pl.Utf8, "player_team": pl.Utf8,
     "last_update": pl.Utf8, "fetched_at": pl.Utf8, "is_reference": pl.Boolean,
     "game_id": pl.Utf8, "season": pl.Int64, "week": pl.Int64,
+    "provider_main": pl.Boolean,
     "gsis_id": pl.Utf8, "match_method": pl.Utf8, "match_score": pl.Float64, "is_main": pl.Boolean,
 }
 
@@ -384,8 +385,9 @@ class OddsService:
 
 
 def mark_main_lines(df: pl.DataFrame) -> pl.DataFrame:
-    """When a book offers several lines for one player+market, the main line is the one whose
-    Over/Under prices are closest to even. Game lines and single-line props are always main."""
+    """When a book offers several lines for one player+market, use the provider's own main-line
+    flag if it sent one; otherwise the main line is the one whose Over/Under prices are closest
+    to even. Game lines and single-line props are always main."""
     if df.height == 0:
         return df.with_columns(pl.lit(None, dtype=pl.Boolean).alias("is_main"))
     keys = ["provider", "event_id", "market", "book", "provider_player_id"]
@@ -401,6 +403,7 @@ def mark_main_lines(df: pl.DataFrame) -> pl.DataFrame:
         .select([*keys, pl.col("line").alias("_main_line")])
     )
     df = df.join(two_sided, on=keys, how="left", nulls_equal=True)
-    return df.with_columns(
-        (pl.col("_main_line").is_null() | (pl.col("line") == pl.col("_main_line"))).alias("is_main")
-    ).drop("_main_line")
+    heuristic = pl.col("_main_line").is_null() | (pl.col("line") == pl.col("_main_line"))
+    if "provider_main" in df.columns:
+        heuristic = pl.when(pl.col("provider_main").is_not_null()).then(pl.col("provider_main")).otherwise(heuristic)
+    return df.with_columns(heuristic.alias("is_main")).drop("_main_line")

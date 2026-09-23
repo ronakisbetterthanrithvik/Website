@@ -35,6 +35,7 @@ class OddsRow:
     last_update: str | None = None
     fetched_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
     is_reference: bool = False
+    provider_main: bool | None = None  # provider's own main-line flag, when it sends one
 
     def to_dict(self) -> dict:
         return asdict(self)

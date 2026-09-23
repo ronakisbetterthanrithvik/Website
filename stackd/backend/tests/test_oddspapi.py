@@ -73,3 +73,21 @@ def test_service_logs_each_request_and_matches_last_first_names(settings, fake_n
     assert "apiKey" not in svc.usage.last("oddspapi")["params"]
     df = svc.table("oddspapi_latest")
     assert set(df.filter(df["market"] == "pass_yds")["gsis_id"]) == {"00-0033873"}
+
+
+def test_catalog_filters_other_sports_and_periods():
+    index = oddspapi.build_market_index(load_fixture("oddspapi_markets.json"))
+    assert "999" not in index and "998" not in index
+
+
+def test_provider_main_line_flag_wins():
+    import polars as pl
+
+    rows = [
+        {"provider": "oddspapi", "event_id": "e", "market": "pass_yds", "book": "pinnacle", "provider_player_id": "1",
+         "side": s, "line": line, "price_decimal": price, "provider_main": main}
+        for s, line, price, main in [("over", 250.5, 1.5, False), ("under", 250.5, 2.6, False),
+                                     ("over", 260.5, 2.0, True), ("under", 260.5, 1.8, True)]
+    ]
+    out = mark_main_lines(pl.DataFrame(rows))
+    assert set(out.filter(pl.col("is_main"))["line"]) == {260.5}

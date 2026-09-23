@@ -103,6 +103,11 @@ def build_market_index(catalog: list[dict]) -> dict[str, dict]:
     """marketId -> {market, handicap, outcomes: {outcomeId: outcomeName}}"""
     index: dict[str, dict] = {}
     for entry in catalog or []:
+        sport = entry.get("sportId")
+        if sport not in (None, NFL_SPORT_ID, str(NFL_SPORT_ID)):
+            continue
+        if _PERIOD_WORDS.search(str(entry.get("period") or "")):
+            continue
         market = classify_market(entry)
         if not market:
             continue
@@ -221,6 +226,7 @@ def parse_odds(
                     last_update=quote.get("changedAt") or quote.get("createdAt"),
                     fetched_at=fetched_at,
                     is_reference=book in reference_books,
+                    provider_main=quote.get("mainLine") if isinstance(quote.get("mainLine"), bool) else None,
                 )
             )
             stats["rows"] += 1
@@ -240,6 +246,8 @@ def _closing(node, before: datetime) -> dict | None:
     snaps = node if isinstance(node, list) else [node]
     best = None
     for snap in snaps:
+        if not isinstance(snap, dict) or snap.get("active") is False:
+            continue
         ts = _parse_ts(snap.get("createdAt") or snap.get("changedAt"))
         if ts and ts < before and (best is None or ts >= best[0]):
             best = (ts, snap)
