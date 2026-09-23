@@ -24,3 +24,13 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Stackd
+.env
+.env.*
+!.env.example
+stackd/backend/data/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
